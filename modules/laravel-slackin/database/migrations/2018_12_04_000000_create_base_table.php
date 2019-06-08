@@ -13,7 +13,7 @@ class CreateBaseTable extends Migration
                 $table->string("team_id");
                 $table->string("team_domain_key");
                 $table->string("name");
-                $table->binary("raw");
+                $table->longText("raw");
                 $table->string("slack_token");
                 $table->timestamps();
             },
@@ -30,7 +30,7 @@ class CreateBaseTable extends Migration
                 $table->unsignedInteger("team_id");
                 $table->string("user_key");
                 $table->string("name");
-                $table->binary("raw");
+                $table->longText("raw");
                 $table->boolean("is_inactive");
                 $table->timestamps();
             },

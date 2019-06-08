@@ -16,10 +16,20 @@ class User extends Model
         return $this->belongsTo(Team::class,"team_id");
     }
 
+    public function getRawAttribute($value):SlackUser
+    {
+        return unserialize(json_decode($value,true));
+    }
+
+    public function setRawAttribute(SlackUser $value)
+    {
+        $this->attributes["raw"] = json_encode(serialize($value));
+    }
+
     public function fillByUser(SlackUser $user){
         $this->name = $user->name;
         $this->user_key = $user->user_id;
-        $this->raw = serialize($user);
+        $this->raw = $user;
         $this->is_inactive = $user->is_deleted;
         return $this;
     }
