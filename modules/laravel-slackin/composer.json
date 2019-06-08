@@ -1,0 +1,40 @@
+{
+    "name": "chatbox-inc/laravel-slackin",
+    "authors": [
+        {
+            "name": "mikakane",
+            "email": "t.goto@chatbox-inc.com"
+        }
+    ],
+    "repositories": [{
+        "type": "path",
+        "url": "../laravel-webhook"
+    }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Chatbox\\Slackin\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "chatbox-inc/laravel-webhook": "*@dev",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "laravel/laravel": "^5.8",
+        "phpunit/phpunit": "^8.1",
+        "fzaninotto/faker": "^1.8"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "\\Chatbox\\Slackin\\SlackinServiceProvider"
+            ]
+        }
+    }
+}

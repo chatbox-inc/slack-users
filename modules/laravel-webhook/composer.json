@@ -1,0 +1,32 @@
+{
+    "name": "chatbox-inc/laravel-webhook",
+    "authors": [
+        {
+            "name": "mikakane",
+            "email": "t.goto@chatbox-inc.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Chatbox\\LaravelWebhook\\": "./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "laravel/laravel": "^5.8",
+        "phpunit/phpunit": "^8.1",
+        "fzaninotto/faker": "^1.8"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "\\Chatbox\\LaravelWebhook\\LaravelWebhookServiceProvider"
+            ]
+        }
+    }
+}
